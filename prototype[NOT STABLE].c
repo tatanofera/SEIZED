@@ -114,7 +114,7 @@ int Event(SDL_Window *window, Entity *man)//processing the events during the gam
 	const Uint8 *state = SDL_GetKeyboardState(NULL);
 	if(!man->shooting)
 	{
-		if(state[SDL_SCANCODE_LEFT])
+		if(state[SDL_SCANCODE_LEFT] || state[SDL_SCANCODE_A])
 		{
 		man->x -= 3;
 		man->chWalk = 1;
@@ -126,7 +126,7 @@ int Event(SDL_Window *window, Entity *man)//processing the events during the gam
 			man->imageNow %= 4;  
 		}  
 		}
-		else if(state[SDL_SCANCODE_RIGHT])
+		else if(state[SDL_SCANCODE_RIGHT] || state[SDL_SCANCODE_D])
 		{
 		man->x += 3;
 		man->chWalk = 1;
